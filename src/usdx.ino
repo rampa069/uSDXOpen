@@ -201,10 +201,10 @@ Global variables use 1499 bytes (73%) of dynamic memory, leaving 549 bytes for l
 
 //#define FAST_AGC         1   // Adds fast AGC option (good for CW) Slow mode not recommended.  Remove for CAT if memory errors.
 
-//#define CAT              1   // CAT-interface - OTHER OPTIONS, SUCH AS CW_MESSAGES and KEEP_BAND_DATA MAY TO BE DISABLED TO MAKE SPACE FOR CAT
+#define CAT              1   // CAT-interface - OTHER OPTIONS, SUCH AS CW_MESSAGES and KEEP_BAND_DATA MAY TO BE DISABLED TO MAKE SPACE FOR CAT
 //#define CAT_EXT        1   // Extended CAT support: remote button and screen control commands over CAT
 //#define CAT_STREAMING    1   // Streams audio and IQ, only 8KHz b/w, & needs faster 115200 baud RS232
-//#define CAT_FAST         1   // Uses faster 115200 baud (can be changed to 57600), else 38400, 8, 1, N.
+#define CAT_FAST         1   // Uses faster 115200 baud (can be changed to 57600), else 38400, 8, 1, N.
 
 // If short of memory on compile and not using Spectrum display, disable CAT_XO_CMD:- Like this:-> //#define CAT_XO_CMD
 #ifdef CAT
@@ -433,11 +433,11 @@ ssb_cap=1; dsp_cap=2;
 
 //FUSES = { .low = 0xFF, .high = 0xD6, .extended = 0xFD };   // Fuse settings should be set at programming (Arduino IDE > Tools > Burn bootloader)
 
-#if(ARDUINO < 10810)
+//#if(ARDUINO < 10810)
 //#if (ARDUINO != 10607)  // G8RDI mod - IDE 2.0.1 has its version set to 10607, an IDE bug since fixed.
 //# error "Unsupported Arduino IDE version, use Arduino IDE 1.8.10 or later from https://www.arduino.cc/en/software"
 //#endif
-#endif
+//#endif
 
 #if !(defined(ARDUINO_ARCH_AVR))
 #error "Unsupported architecture, select Arduino IDE > Tools > Board > Arduino AVR Boards > Arduino Uno."
